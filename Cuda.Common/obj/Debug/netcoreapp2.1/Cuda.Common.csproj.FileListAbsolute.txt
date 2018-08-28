@@ -1,0 +1,9 @@
+C:\Users\KhoiNguyenICT\Desktop\Cuda\Cuda\Cuda.Common\bin\Debug\netcoreapp2.1\Cuda.Common.deps.json
+C:\Users\KhoiNguyenICT\Desktop\Cuda\Cuda\Cuda.Common\bin\Debug\netcoreapp2.1\Cuda.Common.dll
+C:\Users\KhoiNguyenICT\Desktop\Cuda\Cuda\Cuda.Common\bin\Debug\netcoreapp2.1\Cuda.Common.pdb
+C:\Users\KhoiNguyenICT\Desktop\Cuda\Cuda\Cuda.Common\obj\Debug\netcoreapp2.1\Cuda.Common.csprojAssemblyReference.cache
+C:\Users\KhoiNguyenICT\Desktop\Cuda\Cuda\Cuda.Common\obj\Debug\netcoreapp2.1\Cuda.Common.csproj.CoreCompileInputs.cache
+C:\Users\KhoiNguyenICT\Desktop\Cuda\Cuda\Cuda.Common\obj\Debug\netcoreapp2.1\Cuda.Common.AssemblyInfoInputs.cache
+C:\Users\KhoiNguyenICT\Desktop\Cuda\Cuda\Cuda.Common\obj\Debug\netcoreapp2.1\Cuda.Common.AssemblyInfo.cs
+C:\Users\KhoiNguyenICT\Desktop\Cuda\Cuda\Cuda.Common\obj\Debug\netcoreapp2.1\Cuda.Common.dll
+C:\Users\KhoiNguyenICT\Desktop\Cuda\Cuda\Cuda.Common\obj\Debug\netcoreapp2.1\Cuda.Common.pdb
