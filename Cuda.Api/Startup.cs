@@ -1,6 +1,11 @@
-﻿using Cuda.Api.Configurations.Systems;
+﻿using AutoMapper;
+using Cuda.Api.Configurations.Systems;
+using Cuda.Api.Extensions;
 using Cuda.Common.Constants;
 using Cuda.Model;
+using Cuda.Service.Implementations;
+using Cuda.Service.Interfaces;
+using Cuda.Service.Mapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -49,11 +54,25 @@ namespace Cuda.Api
             app.UseCookiePolicy();
             app.UseIdentityServer();
             app.UseAuthentication();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Account}/{action=Login}/{id?}");
+            });
         }
 
         public void ConfigIoc(IServiceCollection services)
         {
             services.AddScoped<AppInitializer>();
+            services.AddScoped<ILoginHistoryService, LoginHistoryService>();
+
+            Mapper.Initialize(cfg =>
+            {
+                cfg.AddProfile<DtoMappingProfile>();
+                cfg.IgnoreUnmapped();
+            });
+            services.AddSingleton(Mapper.Instance.RegisterMap());
         }
     }
 }

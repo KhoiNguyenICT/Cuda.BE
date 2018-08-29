@@ -65,19 +65,19 @@ namespace Cuda.Api.Configurations.Systems
         {
             return new List<Client> {
                 new Client {
-                    ClientId = "icp-web-app",
-                    ClientName = "ICP Web Application",
+                    ClientId = "cuda-web-app",
+                    ClientName = "CUDA Web Application",
                     AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
                     // AllowAccessTokensViaBrowser = true,
                     RequireClientSecret = false,
                     RequireConsent = false,
                     ClientSecrets = new List<Secret>
                     {
-                        new Secret("icp-web-app-secret".Sha256())
+                        new Secret("cuda-web-app-secret".Sha256())
                     },
                     AllowedScopes = new List<string>
                     {
-                        "IcpAPI",
+                        "CudaAPI",
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
                         IdentityServerConstants.StandardScopes.OfflineAccess,
@@ -103,12 +103,12 @@ namespace Cuda.Api.Configurations.Systems
             {
                 new ApiResource
                 {
-                    Name = "IcpAPI",
-                    DisplayName = "ICP API",
-                    Description = "ICP API Access",
+                    Name = "CudaAPI",
+                    DisplayName = "CUDA API",
+                    Description = "CUDA API Access",
                     UserClaims = new List<string> { ClaimTypes.Role, JwtClaimTypes.Role },
                     ApiSecrets = new List<Secret> {new Secret("scopeSecret".Sha256())},
-                    Scopes = new List<Scope> {new Scope("IcpAPI")}
+                    Scopes = new List<Scope> {new Scope("CudaAPI") }
                 }
             };
         }
