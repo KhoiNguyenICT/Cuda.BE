@@ -35,9 +35,8 @@ namespace Cuda.Api.Configurations.Systems
             // thêm claim tùy thích
             claims.AddRange(new List<Claim>
             {
-                new Claim(JwtClaimTypes.FamilyName, user.LastName),
-                new Claim(JwtClaimTypes.GivenName, user.FirstName),
                 new Claim("fullName", user.FirstName + " " + user.LastName),
+                new Claim("userName", user.UserName),
             });
 
             context.IssuedClaims = claims;
