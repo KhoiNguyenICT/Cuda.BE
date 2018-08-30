@@ -6,6 +6,6 @@ namespace Cuda.Service.Interfaces
 {
     public interface ILoginHistoryService: IService<LoginHistory>
     {
-        Task<bool> CheckTokenLoginNeareast(CheckTokenLoginNeareastDto checkTokenLoginNeareastDto);
+        bool CheckTokenLoginNeareast(CheckTokenLoginNeareastDto checkTokenLoginNeareastDto);
     }
 }

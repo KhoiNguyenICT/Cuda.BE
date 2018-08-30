@@ -15,15 +15,15 @@ namespace Cuda.Service.Implementations
         {
         }
 
-        public async Task<bool> CheckTokenLoginNeareast(CheckTokenLoginNeareastDto checkTokenLoginNeareastDto)
+        public bool CheckTokenLoginNeareast(CheckTokenLoginNeareastDto checkTokenLoginNeareastDto)
         {
             var now = DateTime.Now;
-            var query = await this.Queryable().OrderByDescending(x => x.CreatedDate)
+            var query = this.Queryable().OrderByDescending(x => x.CreatedDate)
                 .AsNoTracking()
-                .FirstOrDefaultAsync(x => x.Username == checkTokenLoginNeareastDto.Username);
+                .FirstOrDefault(x => x.Username == checkTokenLoginNeareastDto.Username);
             if (query != null && query.Token == checkTokenLoginNeareastDto.Token)
             {
-                var timeDifference = (now - query.CreatedDate).Seconds;
+                var timeDifference = (now - query.CreatedDate).TotalSeconds;
                 if (timeDifference <= 3600)
                 {
                     return true;

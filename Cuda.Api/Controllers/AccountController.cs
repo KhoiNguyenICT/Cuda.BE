@@ -21,9 +21,9 @@ namespace Cuda.Api.Controllers
 
         [AllowAnonymous]
         [HttpPost("checkToken")]
-        public async Task<bool> CheckToken(CheckTokenLoginNeareastDto checkTokenLoginNeareastDto)
+        public bool CheckToken(CheckTokenLoginNeareastDto checkTokenLoginNeareastDto)
         {
-            var result = await _historyService.CheckTokenLoginNeareast(checkTokenLoginNeareastDto);
+            var result = _historyService.CheckTokenLoginNeareast(checkTokenLoginNeareastDto);
             return result;
         }
     }
